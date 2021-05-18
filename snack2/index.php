@@ -7,9 +7,13 @@
 
     $result = 'Accesso riuscito';
 
-    if (strlen($name) <= 4 || strpos($mail, '@') === false || strpos($mail, '.') === false || is_numeric($age) == false){
+    if (strlen($name) < 4 ){
         $result = 'Accesso negato';
-    } 
+    } else if (strpos($mail, '@') === false || strpos($mail, '.') === false){
+        $result = 'Accesso negato';
+    } else if (is_numeric($age) == false){
+        $result = 'Accesso negato';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +26,7 @@
 </head>
 <body>
 
-    <?php echo $result  ?>     
+    <h1> <?php echo $result  ?> </h1>     
 
 </body>
 </html>
