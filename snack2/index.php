@@ -1,18 +1,15 @@
 <?php
     $name = $_GET["name"];
 
-    // $mail = $_GET["mail"];
+    $mail = $_GET["mail"];
 
-    // $age = $_GET["age"];
+    $age = $_GET["age"];
 
-    // $result = 'Accesso riuscito';
+    $result = 'Accesso riuscito';
 
-    if (strlen($name) < 4){
+    if (strlen($name) <= 4 || strpos($mail, '@') === false || strpos($mail, '.') === false || is_numeric($age) == false){
         $result = 'Accesso negato';
-    } else{
-        $result = 'Accesso riuscito';
-    }
-
+    } 
 ?>
 
 <!DOCTYPE html>
